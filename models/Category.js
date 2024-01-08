@@ -6,7 +6,19 @@ class Category extends Model {}
 
 Category.init(
   {
-    // define columns
+    // Defines the characteristics of ID as an INTEGER, NOT NULL, a Primary Key, and is set to AUTO_INCREMENT
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
+    },
+
+    // Defines the characteristics of location_name as a STRING and NOT NULL
+    location_name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
   },
   {
     sequelize,
