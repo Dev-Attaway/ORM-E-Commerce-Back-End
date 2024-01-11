@@ -15,7 +15,7 @@ Category.init(
     },
 
     // Defines the characteristics of location_name as a STRING and NOT NULL
-    location_name: {
+    category_name: {
       type: DataTypes.STRING,
       allowNull: false
     }
