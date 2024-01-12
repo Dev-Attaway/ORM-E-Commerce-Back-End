@@ -1,11 +1,14 @@
+// An instance of the Express Router class, which is used to define routes for handling different HTTP methods
 const router = require('express').Router();
+
+// destructuring assignment to extract specific objects: Product, Tag, and ProductTag.
 const { Category, Product } = require('../../models');
 
-// The `/api/categories` endpoint
-
+// The endpoint: /api/categories
+// All routes use async and await to handle requests asynchronously
+// Category.findAll uses Sequelize to fetch all Categories from the database
+// include "Product" associated data for each Category
 router.get('/', async (req, res) => {
-  // find all categories
-  // be sure to include its associated Products
   try {
     const categoryData = await Category.findAll({
       include: [{ model: Product}],
@@ -17,9 +20,9 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Find a single product by its `id`, 'id' is taken through the endpoint: /api/categories/'id'
+// "Category.findByPk" uses Sequelize to fetch the Tag from the database based on req.params.id.
 router.get('/:id', async (req, res) => {
-  // find one category by its `id` value
-  // be sure to include its associated Products
   try {
     const categoryData = await Category.findByPk(req.params.id, {
       include: [{ model: Product}],
@@ -35,7 +38,13 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// Creates a new category route
+// The endpoint `/api/categories` 
+// "Tag.create" uses Sequelize to create a new Tag with the data found in req.body
+  /* req.body should look like this...
+    {
+      "category_name": "Basketball"
+    }
+  */
 router.post('/', async (req, res) => {
   try {
     const categoryData = await Category.create({
@@ -47,8 +56,11 @@ router.post('/', async (req, res) => {
   }
 });
 
+// update Category
+// "Category.update" uses Sequelize to fetch a find a single Tag by its `id`, 'id' is taken through the endpoint: /api/tags/'id'
+// if (!categoryData[0]): checks if the value of categoryData[0] is falsy, which means that no records were updated
+// If records were updated (the condition is false): and the Data Base is updated 
 router.put('/:id', async (req, res) => {
-  // update a category by its `id` value
   try {
     const categoryData = await Category.update(req.body, {
       where: {
@@ -65,6 +77,9 @@ router.put('/:id', async (req, res) => {
   }
 });
 
+// DELETE a single Category by its `id`, 'id' is taken through the endpoint: /api/categories/'id'
+// "Tag.destroy" uses Sequelize to DELETE a single Category based on the JSON response 
+// Found within req.params.id
 router.delete('/:id', async (req, res) => {
   // delete a category by its `id` value
   try {
