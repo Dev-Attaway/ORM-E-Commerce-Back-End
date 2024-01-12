@@ -5,7 +5,8 @@
     "browser": true,
     "commonjs": true,
     "node": true,
-    // Add support for ES6 features
+    // ESlint will ignore markdown files, I have a custon README generator which doesn;t follow ESlint md conventions 
+    "MD013": false,
     "es7": true
   },
   "rules": {
