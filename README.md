@@ -15,9 +15,10 @@ This project serves as a model for back-end operations within an E-Commerce sett
 ## Installation
 You can download a fork from my GitHub [HERE](https://github.com/Dev-Attaway/ORM-E-Commerce-Back-End).
 ## Usage
-This application is accessed through a CLI or an integrated terminal and must have [node.js](https://nodejs.org/en) to execute the initialization from the CLI.
-Must also have [MySQL Shell ](https://www.mysql.com/) or a SQL interface supporting development and administration for the MySQL Server.
-You must also use [insomnia API](https://insomnia.rest/) or an alternative Representational State Transfer (REST) API builder to initialize GET, DEL, POST, and PUT routes 
+This application is accessed through a CLI or an integrated terminal.
+Requires [node.js](https://nodejs.org/en) to execute the initialization from the CLI.
+Requires [MySQL Shell ](https://www.mysql.com/) or a SQL interface supporting development and administration for the MySQL Server.
+Requires [insomnia API](https://insomnia.rest/) or an alternative Representational State Transfer (REST) API builder to initialize GET, DEL, POST, and PUT routes 
 ## Contributing
 No further contributions for consideration, develop from your fork
 ## Tests
