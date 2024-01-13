@@ -11,7 +11,7 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 // 'attributes: ['tag_name']' Specifies that only the 'tag_name' attribute of the Tag model should be included in the result.
 // 'through: ProductTag' Specifies ProductTag that represents the association between Product and Tag.
 // as: 'tags' refers to the alias created for the realtionships Tag and ProductTag found in the models/index
-router.get('/', async (res) => {
+router.get('/', async (req, res) => {
   try {
     const productData = await Product.findAll({
       include: [{ model: Category }, { model: Tag, attributes: ['tag_name'], through: ProductTag, as: 'tags' }]
