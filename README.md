@@ -19,6 +19,11 @@ This application is accessed through a CLI or an integrated terminal.
 Requires [node.js](https://nodejs.org/en) to execute the initialization from the CLI.
 Requires [MySQL Shell ](https://www.mysql.com/) or a SQL interface supporting development and administration for the MySQL Server.
 Requires [insomnia API](https://insomnia.rest/) or an alternative Representational State Transfer (REST) API builder to initialize GET, DEL, POST, and PUT routes 
+
+Refer to the video below for a guide of the application's operation
+
+[ORM-E-Commerce.webm](https://github.com/Dev-Attaway/ORM-E-Commerce-Back-End/assets/145059598/cb1bdb0d-0150-4a2b-b0a4-f8d40fa832a9)
+
 ## Contributing
 No further contributions for consideration, develop from your fork
 ## Tests
@@ -37,6 +42,7 @@ The Technology used for this application:
 [npm](https://www.npmjs.com/)
 
 [express](https://www.npmjs.com/package/express)
+
 
 [mysql2](https://www.npmjs.com/package/mysql2)
 
